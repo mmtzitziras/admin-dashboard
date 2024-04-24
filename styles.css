@@ -3,3 +3,26 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: "sidebar header"
+                         "sidebar main";
+}
+
+body > div {
+    border: 2px black solid;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
