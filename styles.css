@@ -1,3 +1,5 @@
+
+
 :root {
     --dark-color: #f97316;
     --text-color-in-dark: #faf5ff;
@@ -14,55 +16,52 @@
 
 body {
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 2fr 6.5fr;
+    grid-template-columns: 1.5fr 8.5fr;
+    grid-template-rows: 0.5fr 3fr;
     grid-template-areas: "sidebar header"
                          "sidebar main";
-    overflow: hidden;
+    /* overflow: hidden; */
+    min-height: 100%;
+    min-width: 100vw;
 }
 
-body > div {
-    border: 2px black solid;
-}
+
 
 .sidebar h1 {
     padding: 20px 0;
-    font-size: 3rem;
+    font-size: calc(.7rem + 1vw);
 }
 
 .sidebar {
     grid-area: sidebar;
-    padding: 30px;
     display: grid;
-    gap: 30px;
+    gap: 10px;
     background-color: var(--dark-color);
     color: var(--text-color-in-dark);
+    grid-template-rows: 10% 30%;
 }
 
 .sidebar > div {
-    padding: 20px;
-    font-size: 2rem;
-    font-weight: bolder;
+    padding-left: 20px;
+    font-size: calc(.5rem + 1vw);
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 4fr;
     align-items: center;
-   
+    gap: 3px;
+    
 }
 
-.navigation > div,
-.settings > div {
-    padding: 10px;
-   
-}
+
 
 .header {
     grid-area: header;
-    padding: 50px;
+    padding: 30px;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    /* grid-template-rows: 1fr 1fr; */
     align-items: center;
     box-shadow: 0 10px 10px gray;
+    
 }
 
 
@@ -86,8 +85,8 @@ body > div {
 }
 
 .profile-pic{
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
 }
 
 .profile{
@@ -98,8 +97,8 @@ body > div {
 }
 
 .profile-pic-welcome{
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     grid-area: image;
 }
 
@@ -117,18 +116,18 @@ body > div {
 .buttons{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1px;
+    gap: 4px;
     
 }
 
 .buttons > button {
-    max-width: 150px;
+    
     background-color: var(--buttons-color);
-    padding: 20px;
+    padding: 10px;
     border-radius: 40px;
     color: var(--text-color-in-dark);
     font-size: 1.2rem;
-    border: 2px black solid;
+    border: 0;
 }
 
 .buttons > button:hover {
@@ -150,14 +149,23 @@ body > div {
     grid-template-rows: 1fr 1fr;
     grid-template-areas: "projects announcements"
                          "projects trending"; 
+    min-width: 75%;
+    position: relative;
 }
 
 .projects{
     display: grid;
     grid-area: projects;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
-    gap: 3rem;
+    gap: 2rem;
+    position: relative;
     
+    
+}
+.main .projects-title{
+    position: absolute;
+    top: 10px;
+    left: 45px;
     
 }
 
@@ -168,8 +176,9 @@ body > div {
     background-color: white;
     align-items: center;
     padding: 20px;
-    box-shadow: 0 5px 10px gray;
+
     box-shadow: -10px 0px 0px 0px var(--dark-color);
+   
     border-radius: 10px;
 }
 
@@ -181,5 +190,21 @@ body > div {
 
 .projects > div .project-text {
     grid-area: text;
-    
+    font-size: .9rem;
+}
+
+.announcements {
+    padding: 0 20px;
+    background-color: white;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 5px 10px gray;
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+.main .announcements-title{
+    position: absolute;
+    top: 10px;
+    right: 20%;
 }
